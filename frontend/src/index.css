@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper-100 text-gray-900;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Noto Serif JP', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-indigo-900 text-paper-100 px-4 py-2 rounded hover:bg-indigo-800 transition-colors font-medium;
+  }
+  .btn-secondary {
+    @apply bg-paper-200 text-indigo-900 border border-indigo-900 px-4 py-2 rounded hover:bg-paper-300 transition-colors font-medium;
+  }
+  .btn-danger {
+    @apply bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800 transition-colors font-medium;
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-paper-200 overflow-hidden;
+  }
+  .input {
+    @apply w-full border border-paper-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:border-transparent bg-white;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+}
+
+/* Wabi-sabi decorative border */
+.washi-border {
+  border-image: repeating-linear-gradient(
+    45deg,
+    #C97D4E,
+    #C97D4E 2px,
+    transparent 2px,
+    transparent 8px
+  ) 1;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C97D4E;
+  border-radius: 3px;
+}
+
+/* Map SVG hover */
+.prefecture-path {
+  transition: fill 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+.prefecture-path:hover {
+  opacity: 0.8;
+}
+
+/* Price display */
+.price-free {
+  @apply text-matcha-500 font-bold;
+}
